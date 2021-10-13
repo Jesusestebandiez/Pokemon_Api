@@ -16,7 +16,7 @@ body {
     list-style: none;
   }
   .pokeball li .flip-card{
-    transform: rotateY(180deg);
+    transform: rotateY(360deg);
     margin: 3px;
     padding: 10px;
     border-radius: 4px;
@@ -26,12 +26,12 @@ body {
     text-align: center;
   }
   .pokeball li img  {
-    transition: transform 0.9s;
+    transition: transform 0.10s;
     width: 200px;
   }
   .pokeball li:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    transition: transform 0.9s;
+    transition: transform 0.10s;
     transform-style: preserve-3d;
     transform: rotateY(180deg);
     backface-visibility: hidden;
@@ -51,7 +51,7 @@ body {
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.9s;
+    transition: transform 0.10s;
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
@@ -60,7 +60,7 @@ body {
     transform: rotateY(180deg);
   }
   
- .pokeball li .flip-card-front, .flip-card-back {
+ .pokeball li .flip-card-front, .flip-card-back .pokedatos {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -73,13 +73,13 @@ body {
     color: black;
   }	
   
-  .pokeball li h3 .flip-card-back {
+  .pokeball li h3 .flip-card-back p .pokedatos {
     background-color: #2980b9;
     color: white;
     transform: rotateY(180deg);
   }
   
   
-.pokeball .datos{
+.pokeball li .pokedatos p{
    color: seashell;
  }

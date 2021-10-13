@@ -5,9 +5,9 @@
 
 const pokelist = document.querySelector(".pokeball");
 
-const getpokemons = async () => {
-    const pokemons = new Array();
-    for (let index =1; index <= 150; index++) {
+const getpokemons = async () => { //De está forma obtenemos los pokemon
+    const pokemons =[] ;
+    for (let index =1; index < 152; index++) {
         let pokemonsfetch = await fetch(`https://pokeapi.co/api/v2/pokemon/${index}`);
         let datospokemon = await pokemonsfetch.json();
 
@@ -27,6 +27,14 @@ const getpokemons = async () => {
 }
 
 const drawpokemons = async () => {
+    const pdatos = ["altura", "categoria", "habilidad", "sexo", "peso"];
+
+    const poketext =[] ; 
+for (let i = 0; i < pdatos.length; i++) {
+  let text = pdatos[i];  
+  poketext.push(text); 
+  console.log(poketext);
+}
     const pokemons = await getpokemons();
     pokemons.forEach(element => {
         pokelist.innerHTML += 
@@ -35,14 +43,20 @@ const drawpokemons = async () => {
                 '<img  src=' + element.image + ' ></img>' +
             '</li>';
     });
-
-
-    /*const card = document.getElementsById("flip-card")
-    card.addEventListener("click",flipCard);
-    function flipCard() {
-        card.classList.toggle("flipCard");
-    }*/
     
+
+ //mostrar la info
+
+ const pokedatos = document.querySelector(".pokedatos") ;
+ '<div class= "flip_Card">'
+ '</div>'
+ '<div class= "flip_Card-inner">'
+ '</div>'
+'<div class="flip-card-front">'
+'</div>'
+'<div class="flip-card-back">'+'<p class="pokedatos"></p>'+'</div>'
+ pokedatos.innerHTML= poketext;
+
 }
 
 drawpokemons();
