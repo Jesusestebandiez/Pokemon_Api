@@ -1,85 +1,71 @@
 body {
-    background-color: rgb(233, 192, 10);
-  }
-  
-  h1 {
-    text-align: center;
-  }
+  background-color: rgb(233, 192, 10);
+}
 
-  h2{
-      text-align: center;
-  }
-  
-  .pokeball {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-  }
-  .pokeball li .flip-card{
-    transform: rotateY(360deg);
-    margin: 3px;
-    padding: 10px;
-    border-radius: 4px;
-    border: 2px solid black;
-  }
-  .pokeball li h3 {
-    text-align: center;
-  }
-  .pokeball li img  {
-    transition: transform 0.10s;
-    width: 200px;
-  }
-  .pokeball li:hover {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    transition: transform 0.10s;
-    transform-style: preserve-3d;
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
-    background-color: transparent;
-  background-color: red;
-  }
-  
- .pokeball li h3 .flip-card{
-    background-color: transparent;
-    width: 300px;
-    height: 300px;
-    perspective: 1000px;
-  }
-  
- .pokeball .flip-card-inner li {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.10s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
-  
- .pokeball li h3 .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-  
- .pokeball li .flip-card-front, .flip-card-back .pokedatos {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  
-   .pokeball li .flip-card-front {
-    background-color: #bbb;
-    color: black;
-  }	
-  
-  .pokeball li h3 .flip-card-back p .pokedatos {
-    background-color: #2980b9;
-    color: white;
-    transform: rotateY(180deg);
-  }
-  
-  
-.pokeball li .pokedatos p{
-   color: seashell;
- }
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.pokeball {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  list-style: none;
+}
+.card {
+  height: 300px;
+  width: 300px;
+}
+.card img {
+  max-height: 200px;
+  max-width: 300px;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: rgb(1,147,248);
+  color: black;
+}
+
+.flip-card-back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(1,147,248);
+  color: black;
+  transform: rotateY(180deg);
+}
